@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <nav class="navbar  bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Bienvenido {Usuario}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> Gestion de usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> Gestion de inventarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Cerrar sesion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <br><br><br><br>
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="principal.html" method="post">
+                            <center>
+                                <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png"
+                                    width="300px" class="img" alt="...">
+                                <br>
+                                <h2>Agregar usuario</h2>
+                            </center>
+                            <br>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Juanito" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Apellido:</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Alcachofa" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">DUI:</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="059732-5" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Numero de Telefono:</label>
+                                <input type="tel" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="71680706" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Correo Electronico:</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Carlosgeek503@gmail.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Rol</label>
+                                <select name="rol" id="rol" class="form-control">
+                                    <option value="">
+                                        -- Selecciona el rol --
+                                    </option>
+                                    <option value="administrador">
+                                        administrador
+                                    </option>
+                                    <option value="Trabajador">
+                                        Trabajador
+                                    </option>
+                                    <option value="Dueño">
+                                        Dueño
+                                    </option>
+                                </select>
+                            </div>
+                            <center>
+                                <button type="submit" class="btn btn-primary">Añadir usuario</button>
+                            </center>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col-7">
+                <table class="table table-dark table-hover" style="font-size: large;">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">DUI</th>
+                            <th scope="col">Numero de Telefono</th>
+                            <th scope="col">Correo electronico</th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <i class="bi bi-person-dash-fill" style="font-size: 20px;"></i>
+
+                                <i class="bi bi-pencil" style="font-size: 20px;"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <i class="bi bi-person-dash-fill" style="font-size: 20px;"></i>
+
+                                <i class="bi bi-pencil" style="font-size: 20px;"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <i class="bi bi-person-dash-fill" style="font-size: 20px;"></i>
+
+                                <i class="bi bi-pencil" style="font-size: 20px;"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

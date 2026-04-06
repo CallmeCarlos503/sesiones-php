@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba de Seguridad</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .container { max-width: 400px; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        input { width: 90%; padding: 10px; margin: 10px 0; display: block; }
+        button { background: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer; width: 100%; }
+        #mensaje { margin-top: 15px; font-weight: bold; }
+        .error { color: #d9534f; }
+        .exito { color: #5cb85c; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3>Registro de Usuario</h3>
+    
+    <label>Correo electrónico:</label>
+    <input type="email" id="email" placeholder="ejemplo@correo.com">
+
+    <label>Contraseña:</label>
+    <input type="password" id="pass" placeholder="Tu contraseña">
+
+    <button onclick="probarValidacion()">Verificar</button>
+
+    <div id="mensaje"></div>
+</div>
+
+<script>
+    function probarValidacion() {
+        const email = document.getElementById('email').value;
+        const pass = document.getElementById('pass').value;
+        const mensajeDiv = document.getElementById('mensaje');
+
+        // Limpiar estilos previos
+        mensajeDiv.className = "";
+
+        // 1. Validar que no estén vacíos
+        if(!email || !pass) {
+            mensajeDiv.innerHTML = "Por favor, completa ambos campos.";
+            mensajeDiv.className = "error";
+            return;
+        }
+
+        // 2. Lógica de comparación
+        const nombreUsuario = email.split('@')[0].toLowerCase();
+        const passLower = pass.toLowerCase();
+
+        if (passLower === email.toLowerCase()) {
+            mensajeDiv.innerHTML = "¡Error! La contraseña es igual al email.";
+            mensajeDiv.className = "error";
+        } 
+        else if (passLower.includes(nombreUsuario) && nombreUsuario.length > 3) {
+            mensajeDiv.innerHTML = `¡Error! La contraseña contiene "${nombreUsuario}".`;
+            mensajeDiv.className = "error";
+        } 
+        else {
+            mensajeDiv.innerHTML = "✅ Contraseña segura (no tiene relación con el correo).";
+            mensajeDiv.className = "exito";
+        }
+    }
+</script>
+
+</body>
+</html>
