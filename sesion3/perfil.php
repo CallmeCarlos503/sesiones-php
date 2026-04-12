@@ -14,32 +14,9 @@ include_once("./modules/datos.php");
 </head>
 
 <body>
-     <nav class="navbar  bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Bienvenido {Usuario}</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"> Gestion de usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"> Gestion de inventarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Cerrar sesion</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+      <?php
+    include_once('./modules/navbar.php');
+    ?>
     <br><br><br>
     <div class="container">
 
@@ -53,34 +30,54 @@ include_once("./modules/datos.php");
                         <label for="exampleFormControlInput1" class="form-label">Correo Electronico</label>
                         <br>
                         <p style="font-size: 30px;">
-                            {Correo electronico}
+                            <?php
+                            echo $_SESSION['Correo']
+                            ?>
                         </p>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                        <br>
-                        <p style="font-size: 30px;">
-                            {<?php
-                              echo $contrasena;
-                            ?>}
-                        </p>
-                    </div>
+                    
                      <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Telefono</label>
                         <br>
                         <p style="font-size: 30px;">
-                            {71680706}
+                             <?php
+                            echo $_SESSION['Telefono']
+                            ?>
                         </p>
                     </div>
                      <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Rol a desempeñar</label>
                         <br>
                         <p style="font-size: 30px;">
-                            {Administrador}
+                             <?php
+                            $rol= $_SESSION['Rol'];
+                            if ($rol==1) {
+                                echo 
+                                "
+                                <h1> ADMINISTRADOR </h1>
+                                ";
+                            }
+                            else if ($rol==2) {
+                                echo 
+                                "
+                                <h1> Empleado </h1>
+                                ";
+                            }else if ($rol==3) {
+                                echo 
+                                "
+                                <h1> Programador </h1>
+                                ";
+                            }else{
+                                echo"
+                                <h1> OTROS </h1>
+                                ";
+                            }
+                            ?>
                         </p>
                     </div>
                     <center>
-                        <button type="submit" class="btn btn-secondary" style="font-size: 20px;">Cerrar Sesion</button>
+                        <a href="./modules/out.php" class="btn btn-secondary" style="font-size: 20px;"> Cerrar sesion</a>
+                        
                     </center>
 
             </div>
